@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>WebRTC: Still photo capture demo</title>
+	<meta charset='utf-8'>
+	<link rel="stylesheet" href="main.css" type="text/css" media="all">
+	<script src="capture.js">
+	</script>
+
+	<style>
+		.container {
+			display: flex;
+		}
+	</style>
+</head>
+
+<body>
+
+
+	<h1>
+		<a href="https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Taking_still_photos">
+			Taking still photos with WebRTC</a>
+	</h1>
+
+	<h2>
+
+		<a href="https://codepen.io/jakob-e/pen/Qjpowv">Nice wallpapers </a>
+	</h2>
+
+	<div>
+		<a
+			href="https://medium.com/quick-code/a-simple-technique-for-real-time-video-gaussian-blurs-that-did-seem-to-work-42b2c6bb9989">
+			A simple technique for real-time video Gaussian blurs that did seem to work.
+		</a>
+		<a href=""></a>
+	</div>
+
+	<div class="container">
+
+		<!-- recibir la transmision -->
+		<div>
+			<h3> recibirá la transmisión de navigator.mediaDevices.getUserMedia(),</h3>
+
+			<div class="camera">
+				<video id="video">Video stream not available.</video>
+
+				<!-- hace clic para capturar un cuadro de video. -->
+				<button id="startbutton">Take photo</button>
+				<button id="addBlurButton">Add blur</button>
+			</div>
+
+		</div>
+
+
+
+		<div>
+			<p>
+				A continuación, tenemos un <a href="/en-US/docs/Web/HTML/Element/canvas"><code>&lt;canvas&gt;</code></a>
+				elemento en el que se almacenan los fotogramas capturados, potencialmente
+				manipulados de alguna manera y luego convertidos en un archivo de imagen de salida. Este lienzo se mantiene
+				oculto mediante el estilo del lienzo con , para evitar saturar la pantalla; el usuario no necesita ver esta
+				etapa intermedia.display:none
+			</p>
+
+			<p>El canvas es para pasar el momento del video imagen y despues eso convertirlo a una imagen data</p>
+
+			<canvas id="canvas"></canvas>
+		</div>
+
+		<div>
+
+			<p>
+				También tenemos un <img>elemento en el que dibujaremos la imagen: esta es la pantalla final que se muestra al
+				usuario.
+			</p>
+
+			<div class="output">
+				<img id="photo" alt="The screen capture will appear in this box.">
+			</div>
+
+		</div>
+
+	</div>
+
+
+</body>
+
+</html>
